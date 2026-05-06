@@ -10,6 +10,13 @@ export function ProjectsSection() {
       eyebrow="Selected work with real-world engineering constraints"
       title="Projects"
     >
+      <Reveal className="reveal">
+        <p className="mb-6 max-w-2xl text-sm leading-7 text-zinc-600/90 dark:text-zinc-300/85">
+          A mix of product-facing and systems-focused work. Each project balances
+          user experience with reliability, clean API contracts, and maintainable
+          architecture.
+        </p>
+      </Reveal>
       <div className="grid gap-4 md:grid-cols-2">
         {projects.map((p, idx) => (
           <Reveal key={p.title} className="reveal" delayMs={idx * 120}>

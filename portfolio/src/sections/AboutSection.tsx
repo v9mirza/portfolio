@@ -5,16 +5,22 @@ import { Badge } from '../components/Badge'
 import { profile, socialLinks } from '../content'
 
 export function AboutSection() {
+  const principles = [
+    'Design APIs before writing handlers.',
+    'Keep components simple and isolate complexity in clear service layers.',
+    'Measure performance and reliability with realistic data and constraints.',
+  ]
+
   return (
     <Section
       id="about"
       eyebrow="Developer + technical writing"
       title="About"
     >
-      <div className="grid gap-10 md:grid-cols-12 md:items-start">
+      <div className="grid gap-8 sm:gap-10 md:grid-cols-12 md:items-start">
         <div className="md:col-span-7">
           <Reveal className="reveal">
-            <p className="text-base leading-7 text-zinc-600/90 dark:text-zinc-300/90">
+            <p className="text-sm leading-7 text-zinc-600/90 sm:text-base dark:text-zinc-300/90">
               I build boring software—predictable, maintainable systems with
               clear boundaries and explicit data flow. Performance matters, but
               so does correctness under real constraints: latency budgets,
@@ -24,21 +30,35 @@ export function AboutSection() {
           </Reveal>
 
           <Reveal className="reveal" delayMs={120}>
-            <p className="mt-5 text-base leading-7 text-zinc-600/85 dark:text-zinc-300/85">
+            <p className="mt-5 text-sm leading-7 text-zinc-600/85 sm:text-base dark:text-zinc-300/85">
               My approach is architectural: define API contracts early, keep
               models honest, document assumptions, and iterate with measurable
               feedback. Components are the surface; systems are the work.
             </p>
           </Reveal>
 
+          <Reveal className="reveal" delayMs={180}>
+            <ul className="mt-6 space-y-3">
+              {principles.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-sm leading-6 text-zinc-600/90 dark:text-zinc-300/90"
+                >
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sky-500/70" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+
           <div className="mt-7 flex flex-wrap gap-2">
-            <Reveal className="reveal" delayMs={200}>
+            <Reveal className="reveal" delayMs={240}>
               <Badge>Clear API boundaries</Badge>
             </Reveal>
-            <Reveal className="reveal" delayMs={240}>
+            <Reveal className="reveal" delayMs={280}>
               <Badge>Predictable data flows</Badge>
             </Reveal>
-            <Reveal className="reveal" delayMs={280}>
+            <Reveal className="reveal" delayMs={320}>
               <Badge>Practical over theoretical</Badge>
             </Reveal>
           </div>

@@ -32,10 +32,13 @@ export function ContactSection() {
       eyebrow="Contact"
       title="Let's build something that lasts."
     >
-      <div className="grid gap-10 md:grid-cols-12 md:items-start">
+      <div className="grid gap-8 sm:gap-10 md:grid-cols-12 md:items-start">
         <div className="md:col-span-5">
           <Reveal className="reveal">
-            <div className="rounded-2xl border border-zinc-200/90 bg-white/85 p-6 dark:border-zinc-800/70 dark:bg-zinc-950/20">
+            <div className="rounded-3xl border border-zinc-200/90 bg-white/85 p-5 sm:p-6 shadow-[0_14px_45px_rgba(0,0,0,0.07)] dark:border-zinc-800/70 dark:bg-zinc-950/30 dark:shadow-[0_14px_45px_rgba(0,0,0,0.24)]">
+              <div className="mb-5 rounded-2xl border border-sky-200/70 bg-sky-50/70 p-3 text-sm leading-6 text-zinc-700 sm:p-4 dark:border-sky-900/50 dark:bg-sky-950/20 dark:text-zinc-300">
+                Open to freelance, contract, and full-time software engineering roles.
+              </div>
               <div className="text-xs tracking-widest text-zinc-500/90 dark:text-zinc-400/90">
                 Location
               </div>
@@ -48,7 +51,7 @@ export function ContactSection() {
               </div>
               <a
                 href={`mailto:${profile.email}`}
-                className="mt-3 inline-flex items-center gap-2 rounded-xl border border-zinc-200/70 bg-white/60 px-4 py-2 text-sm text-zinc-900 transition hover:bg-zinc-200/20 hover:text-zinc-900 dark:border-zinc-800/70 dark:bg-zinc-900/20 dark:text-zinc-200/95 dark:hover:bg-zinc-800/20 dark:hover:text-zinc-100"
+                className="mt-3 inline-flex items-center gap-2 rounded-xl border border-zinc-200/70 bg-white/60 px-4 py-2 text-sm text-zinc-900 transition hover:-translate-y-0.5 hover:bg-zinc-200/20 hover:text-zinc-900 dark:border-zinc-800/70 dark:bg-zinc-900/20 dark:text-zinc-200/95 dark:hover:bg-zinc-800/20 dark:hover:text-zinc-100"
               >
                 {profile.email}
               </a>
@@ -66,7 +69,7 @@ export function ContactSection() {
         <div className="md:col-span-7">
           <Reveal className="reveal" delayMs={120}>
             <form
-              className="rounded-2xl border border-zinc-200/90 bg-white/85 p-6 dark:border-zinc-800/70 dark:bg-zinc-950/20"
+              className="rounded-3xl border border-zinc-200/90 bg-white/85 p-5 sm:p-6 shadow-[0_14px_45px_rgba(0,0,0,0.07)] dark:border-zinc-800/70 dark:bg-zinc-950/30 dark:shadow-[0_14px_45px_rgba(0,0,0,0.24)]"
               onSubmit={(e) => {
                 e.preventDefault()
                 setSubmitted(true)
@@ -74,7 +77,7 @@ export function ContactSection() {
                 window.location.href = mailto
               }}
             >
-              <div className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <div className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
                 Write a message
               </div>
               <div className="mt-1 text-sm text-zinc-500/90 dark:text-zinc-400/90">
@@ -115,8 +118,8 @@ export function ContactSection() {
                 />
               </label>
 
-              <div className="mt-5 flex flex-wrap items-center gap-3">
-                <Button variant="secondary" type="submit">
+              <div className="mt-5 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+                <Button variant="primary" type="submit" className="w-full sm:w-auto">
                   Send email
                 </Button>
                 {submitted ? (
